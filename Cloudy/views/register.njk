@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block header %}
+<head>
+    <meta charset="UTF-8">
+    <title>Octo-Train!  File sharing like it was 2009</title>
+</head>
+{% endblock %}
+
+<body>
+    {% block mainbody %}
+    <div class="login-page">
+            <div class="white-area">
+            
+                <h1 class="octo">Octo Train</h1>
+
+                <form method="post">
+                    <div class="fill_area">
+                        <!-- Username -->
+                        <input type="text" placeholder="Name" name="username" id="nameInp" class="form_name">
+                        <!-- Password -->
+                        <input type="password" placeholder="Password" name="password" id="passInp" class="form_password">
+                        <!-- Password show button -->
+                        <input type="checkbox" onclick="password_show()" class="password_shown_button">
+                        <p class="showpass">Show Password</p>
+                    </div>
+                        <!-- Register buttons -->
+                    <button type="submit" class="signin-btn" id="create-btn">
+                        <p class="signin_text">Register</p>
+                    </button> 
+                </form>  
+
+                <div class="container_signin">
+                    <p>Already a member?<a href="/">Sign in</a>.</p>
+                </div>
+            </div>  
+        </div>
+    {% endblock %}
+    
+    {% block footer %}
+    {% endblock %}
+</body>
+
+<script>
+{% block script %}
+        function password_show() {
+            let x = document.getElementById("passInp");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+        let input = document.getElementById("passInp");
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("create-btn").click();
+            }
+        });
+{% endblock script %}
+</script>
+
+<style>
+    {% block style %}
+        {% include "./partials/logincss.njk" %}
+    {% endblock style%}
+</style>

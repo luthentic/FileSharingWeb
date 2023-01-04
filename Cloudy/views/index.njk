@@ -1,0 +1,17 @@
+{% extends "main_layout.njk" %}
+
+{% block mainbody %}
+    <div class="main_container">
+        {% include "partials/NavBar.njk" %}
+        <p class="text"><a href="/logout" class="logout-btn">Logout</a>{{username}}: File lists</p>
+
+        {% include "partials/file_item.njk" %}
+        {% include "partials/ChangeTracker.njk" %}
+    </div>
+{% endblock %}
+
+<script>
+  {% block script %}
+      {% include "partials/WebSocket.njk" %}
+  {% endblock script %}
+</script>

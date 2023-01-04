@@ -1,0 +1,20 @@
+{% extends "main_layout.njk" %}
+{% block mainbody %}
+    <div class="main_container" >
+        {% include "partials/NavBar.njk" %}
+        <form method="post" action="/upload" name="file_form" class="file_form" enctype="multipart/form-data">
+            <input type="file" name="fileSubmitted" class="file_container"/>
+            <p class="drag_text">Drag and drop files or Click here</p>
+            <input type="submit" id="submitButton" name="submitButton" onclick="uploadAlert()">
+        </form>
+    </div>
+{% endblock %}
+
+
+<script>
+    {% block script %}
+      function uploadAlert(){
+        alert("File uploaded successfully!")
+      }
+    {% endblock script %}
+</script>

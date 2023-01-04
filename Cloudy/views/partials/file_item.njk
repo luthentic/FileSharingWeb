@@ -1,0 +1,7 @@
+<ul class="file_list" id="main_list">
+    <!--Logic control (for-loops)-->
+    {% for file in files %}
+        <li class="file_li"><a href="/files/{{file}}" class="file_a">{{file}}</a></li>
+        {# <button class="delete-button" data-id="{{file}}">  #}
+    {% endfor %}
+</ul>

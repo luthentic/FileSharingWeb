@@ -1,0 +1,13 @@
+const ws = new WebSocket('ws:/localhost:3000/gallery');
+ws.onmessage = function(message) {
+    const data = JSON.parse(message.data);
+    if(data.event == 'insert'){
+        const newList = document.createElement("li");
+        newList.innerHTML += `<a href="${data.payload}">${data.payload}</a>`;
+        document.getElementById("main_list").appendChild(newList);
+    }
+
+    if(data.event =="removal"){
+        document.getElementById("change_tracker").innerHTML = data.payload;
+    }
+}
