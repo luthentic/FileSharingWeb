@@ -1,6 +1,6 @@
 const MONGODB = {
     user: "GroupCluster",
-    login: "Y1X34paMFnJnf8xr",
+    login: "",
     cluster: "fileserver.vq6jgnd.mongodb.net"
 }
 
