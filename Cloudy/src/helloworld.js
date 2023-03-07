@@ -13,7 +13,7 @@ const userSession = session({
 // Set up MongoDB
 const mongodb = require('mongodb');
 const {MONGODB} = require("./keys/credentials");
-const uri = `mongodb+srv://${MONGODB.user}:${MONGODB.login}@${MONGODB.cluster}/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${MONGODB.user}:${MONGODB.password}@${MONGODB.cluster}/?retryWrites=true&w=majority`;
 const client = new mongodb.MongoClient(uri);
 const default_database = "Thailan"; // For now
 
