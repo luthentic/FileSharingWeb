@@ -13,7 +13,7 @@ const userSession = session({
 // Set up MongoDB
 const mongodb = require('mongodb');
 var client;
-const default_database = "Thailan"; // For now
+const default_database = "cloudyFiles"; // For now
 
 // Set up cache
 const Cache = require('./cache.js');

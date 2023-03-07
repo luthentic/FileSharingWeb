@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bkfd2Password = require("pbkdf2-password");
 const hash = bkfd2Password();
 const {MONGODB} = require("../keys/credentials");
-const uri = `mongodb+srv://${MONGODB.user}:${MONGODB.login}@${MONGODB.cluster}/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${MONGODB.user}:${MONGODB.password}@${MONGODB.cluster}/?retryWrites=true&w=majority`;
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -67,7 +67,7 @@ async function seedUser(){
                 salt: " "
             });
 
-            hash({password: "veryfunny"}, function(err, pass, salt, hashed) {
+            hash({password: "5523"}, function(err, pass, salt, hashed) {
                 if (err) throw err;
                 alphaUser.password = hashed;
                 alphaUser.salt = salt;
