@@ -3,8 +3,7 @@ html, body {
   vertical-align: middle;
   height: 100%;
   margin: 0;
-  background-color: rgb(237, 237, 237);
-
+  background-color: #b2e2f8;
 }
 
 html {
@@ -17,10 +16,7 @@ html {
   position: relative;
   width: 900px;
   height: 600px;
-  background: #ddf4f9;
-  border: 3px solid #FFFFFF;
-  box-shadow: 4px 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
+  border-radius: 6px;
 }
 
 .create_account{
@@ -42,12 +38,10 @@ html {
   position: absolute;
   width: 530px;
   height: 100%;
-  
+  box-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.20);
   inset: 0px 54px 100px 370px;
-  
   background: #FFFFFF;
-  border-radius: 30px;
-
+  border-radius: 6px;
 }
 
 a:link { text-decoration: none; }
@@ -120,7 +114,6 @@ input[type=password] {
   position: absolute;
   border: none;
   cursor: pointer;
-  
   background-color: inherit;
   inset: 110px 0px 0px 225px;
   
@@ -167,3 +160,37 @@ input[type=password] {
   inset: 440px 0px 0px 155px;
 }
 
+.login-page {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

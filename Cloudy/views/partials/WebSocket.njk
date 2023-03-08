@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws:/localhost:3000/gallery');
+const ws = new WebSocket('wss:/localhost:3000/gallery');
 ws.onmessage = function(message) {
     const data = JSON.parse(message.data);
     if(data.event == 'insert'){

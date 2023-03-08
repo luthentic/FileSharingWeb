@@ -3,7 +3,6 @@ const {User, seedUser, addUser} = require("../../model/userModel");
 const session = require("express-session");
 const router = express.Router();
 var client;
-seedUser(client);
 
 const parser = express.urlencoded({extended: false});
 const userSession = session({
@@ -40,7 +39,7 @@ router.route("/")
 //Registration Routes
 router.route("/register")
     .get((req,res) =>{
-        res.render("register.njk");
+        res.render("register.html");
     })
     .post(parser, async(req,res) =>{
         req.model.checkDuplicate(req.body.username, function(user) {
@@ -56,6 +55,8 @@ router.route("/register")
             }
         })
     });
+
+    seedUser(client);
 
 //Logout (needs to be implemented on a logout button)
 router.route("/logout").get((req,res) =>{
