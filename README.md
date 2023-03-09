@@ -1,6 +1,6 @@
 # ☁️ Cloudy (File Sharing System)
-![Images](upload.png)
-![Images](browse.png)
+Images/upload.png
+Images/browse.png
 
 > ⚠️ **NOTE**: 
 > MongoDB, Credentials, MongooseModel are ignored. 
