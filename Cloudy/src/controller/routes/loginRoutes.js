@@ -39,7 +39,7 @@ router.route("/")
 //Registration Routes
 router.route("/register")
     .get((req,res) =>{
-        res.render("register.html");
+        res.render("register.njk");
     })
     .post(parser, async(req,res) =>{
         req.model.checkDuplicate(req.body.username, function(user) {
