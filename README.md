@@ -1,11 +1,13 @@
 # ☁️ Cloudy (File Sharing System)
-Images/upload.png
-Images/browse.png
+## Upload
+![image](https://user-images.githubusercontent.com/33567830/224738818-5f3f761d-4bc9-4236-b312-23571cf0b006.png)
+## Browse
+![image](https://user-images.githubusercontent.com/33567830/224738903-ea145ada-2dbd-4f39-aa8d-54af341600e2.png)
 
 > ⚠️ **NOTE**: 
 > MongoDB, Credentials, MongooseModel are ignored. 
 >
-> It's required to connect your own DB!
+It's required to connect your own DB!
 
 ## 🚀 Overview
 
