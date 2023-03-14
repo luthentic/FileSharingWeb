@@ -5,7 +5,7 @@
 
     <div class="main_container">
         {% include "partials/NavBar.njk" %}
-        <p class="text"><a href="/logout" class="logout-btn">Logout</a>{{username}}: File lists</p>
+        <p class="text"></p>
         
         {% include "partials/file_item.njk" %}
         {% include "partials/ChangeTracker.njk" %}
@@ -18,8 +18,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Sewoong Lee</span>
-                    <span class="profession">Front-End </span>
+                    <span class="name">{{username}}'s File lists</span>
                 </div>
             </div>
 
@@ -28,53 +27,26 @@
 
         <div class="menu-bar">
             <div class="menu">
-
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                    <span class="tooltip">Search</span>
-                </li>
-
+              <li class="nav-link">
+                <a href="/files">
+                  <i class='bx bx-file icon'></i>
+                </a>
+                <span class="tooltip">User</span>
+              </li>
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-user icon' ></i>
-                            <span class="text nav-text">Dashboard</span>
+                        <a href="/upload">
+                            <i class='bx bx-cloud-upload icon'></i>
                         </a>
                         <span class="tooltip">User</span>
                     </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                          <i class='bx bx-chat icon' ></i>
-                            <span class="text nav-text">Message</span>
-                        </a>
-                        <span class="tooltip">Messages</span>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
-                        </a>
-                        <span class="tooltip">Notifications</span>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-heart icon' ></i>
-                            <span class="text nav-text">Likes</span>
-                        </a>
-                        <span class="tooltip">Likes</span>
-                    </li>
-
 
                 </ul>
             </div>
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="/logout">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>

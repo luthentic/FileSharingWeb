@@ -1,14 +1,37 @@
-    body {  
-        margin: 0;
-        background-color: rgb(237, 237, 237);
-        }
+    /* Google Font Import - Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
+    :root{
+      /* ===== Colors ===== */
+      --body-color: #E4E9F7;
+      --sidebar-color: #FFF;
+      --primary-color: #695CFE;
+      --primary-color-light: #F6F5FF;
+      --toggle-color: #DDD;
+      --text-color: #707070;
+
+      /* ====== Transition ====== */
+      --tran-03: all 0.2s ease;
+      --tran-03: all 0.3s ease;
+      --tran-04: all 0.3s ease;
+      --tran-05: all 0.3s ease;
+    }
+
+    body{
+      min-height: 100vh;
+      background-color: var(--body-color);
+      transition: var(--tran-05);
+    }
     html {
         margin: 0;
         padding:15vh ;
         }
-    
-
     
     .nun{
         position: relative;
@@ -170,38 +193,6 @@
 
 
 
-
-
-/* Google Font Import - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-:root{
-    /* ===== Colors ===== */
-    --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
-    --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #707070;
-
-    /* ====== Transition ====== */
-    --tran-03: all 0.2s ease;
-    --tran-03: all 0.3s ease;
-    --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
-}
-
-body{
-    min-height: 100vh;
-    background-color: var(--body-color);
-    transition: var(--tran-05);
-}
 
 ::selection{
     background-color: var(--primary-color);
@@ -482,6 +473,37 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
+.sidebar li .tooltip{
+    display: none;
+  }
+
+  .li .tooltip{
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 3;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 0px 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: 0s;
+  
+  .tooltip:hover{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .tooltip{
+    display: none;
+  } 
+}
 
 @media (max-width: 420px) {
   .sidebar li .tooltip{
@@ -495,7 +517,7 @@ body.dark .home .text{
     z-index: 3;
     background: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 6px 12px;
+    padding: 0px 12px;
     border-radius: 4px;
     font-size: 15px;
     font-weight: 400;

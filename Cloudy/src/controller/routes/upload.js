@@ -3,7 +3,7 @@ const express = require('express');
 const session = require("express-session");
 const mongoUtils = require('../../model/mongo_utilities');
 const router = express.Router();
-const default_database = "Thailan";
+const default_database = "cloudyFiles";
 
 const userSession = session({
     name: "session",

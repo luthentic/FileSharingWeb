@@ -32,6 +32,7 @@ router.route("/")
         }
         else{
             res.redirect("/");
+            res.send("Incorrect username or password");
         }
     })
 });
