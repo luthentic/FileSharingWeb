@@ -14,15 +14,19 @@ It's required to connect your own DB!
 **NOTE**: This README is not updated as frequently as the documentation. Please check out the documentation above for the latest updates!
 
 #### Context
-
+File upload and sharing web service using MVC architecture, JavaScript, MongoDB, Express.js, Nunjucks, and CSS.
+File sharing server with Express and user validation implemented using Mongoose model schema.
+Customized cache system to optimize efficiency and facilitate reaccessing of data.
 
 ## 📄 Documentation
+To use the file sharing system, users must first register with the system by providing their username, email address, and password. Once registered, users can log in to the system and start uploading and sharing files.
 
+To upload a file, users select the file they want to upload and specify who can access the file. Users can also specify which folder the file should be stored in.
 
 ## 💻 Example Usage
 
 ```
-Connect MongoDB first -> npx nodemon helloworld.js 
+
 ```
 
 
