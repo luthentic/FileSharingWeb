@@ -1,33 +1,8 @@
-    /* Google Font Import - Poppins */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    body {  
+        margin: 0;
+        background-color: rgb(237, 237, 237);
+        }
 
-    :root{
-      /* ===== Colors ===== */
-      --body-color: #E4E9F7;
-      --sidebar-color: #FFF;
-      --primary-color: #695CFE;
-      --primary-color-light: #F6F5FF;
-      --toggle-color: #DDD;
-      --text-color: #707070;
-
-      /* ====== Transition ====== */
-      --tran-03: all 0.2s ease;
-      --tran-03: all 0.3s ease;
-      --tran-04: all 0.3s ease;
-      --tran-05: all 0.3s ease;
-    }
-
-    body{
-      min-height: 100vh;
-      background-color: var(--body-color);
-      transition: var(--tran-05);
-    }
     html {
         margin: 0;
         padding:15vh ;
@@ -131,12 +106,12 @@
     .main_container{
         left: 50%;
         top: 50%;
-        width: 900px;
-        height: 600px;
+        width: 1000px;
+        height: 650px;
         margin: 0 auto;
         background: rgb(251, 251, 251);
-        box-shadow: 4px 8px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 15px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.10);
+        border-radius: 8px;
     }
 
     .file_form{
@@ -192,7 +167,36 @@
 
 
 
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
+:root{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
 
 ::selection{
     background-color: var(--primary-color);
@@ -484,7 +488,7 @@ body.dark .home .text{
     z-index: 3;
     background: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 0px 12px;
+    padding: 6px 12px;
     border-radius: 4px;
     font-size: 15px;
     font-weight: 400;
@@ -492,7 +496,7 @@ body.dark .home .text{
     white-space: nowrap;
     pointer-events: none;
     transition: 0s;
-  
+  }
   .tooltip:hover{
     opacity: 1;
     pointer-events: auto;
@@ -503,7 +507,7 @@ body.dark .home .text{
   .tooltip{
     display: none;
   } 
-}
+
 
 @media (max-width: 420px) {
   .sidebar li .tooltip{
@@ -517,7 +521,7 @@ body.dark .home .text{
     z-index: 3;
     background: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 0px 12px;
+    padding: 6px 12px;
     border-radius: 4px;
     font-size: 15px;
     font-weight: 400;
@@ -536,4 +540,54 @@ body.dark .home .text{
   .tooltip{
     display: none;
   } 
+}
+
+{# Footer #}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #7e7e7e;
+  line-height: 28px;
 }

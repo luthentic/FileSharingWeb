@@ -1,18 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-{% block header %}
-<head>
-    <meta charset="UTF-8">
-    <title>Hello {{name}}</title>
-</head>
-{% endblock %}
+  {% block header %}
+  <head>
+      <meta charset="UTF-8">
+      <title>Welecome to Coudy {{name}}</title>
+  </head>
+  {% endblock %}
+  
 <body>
     {% block mainbody %}
-        Default body missing
+      <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <!--<img src="logo.png" alt="">-->
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">{{username}}'s File lists</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+              <li class="nav-link">
+                <a href="/files">
+                  <i class='bx bx-file icon'></i>
+                </a>
+                <span class="tooltip">User</span>
+              </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/upload">
+                            <i class='bx bx-cloud-upload icon'></i>
+                        </a>
+                        <span class="tooltip">User</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="/logout">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+    </nav>
     {% endblock %}
     
     {% block footer %}
-        <p class="nun">Made with Nunjucks</p>
+        <footer class="footer-section">
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <div class="container">
+            <div class="footer-cta">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find Me</h4>
+                                <span>Winnipeg, Canada</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call me</h4>
+                                <span>+1 204 869 4349</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>dltpdnd1234@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+          <hr style="height:2px;border-width:0;color:gray;background-color:gray">
     {% endblock %}
 </body>
 
@@ -23,7 +114,8 @@
 </style>
 
 <script>
-{% block script %}
-{% endblock script %}
+  {% block script %}
+     
+  {% endblock script %}
 </script>
 </html>

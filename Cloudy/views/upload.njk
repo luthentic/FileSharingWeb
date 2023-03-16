@@ -1,20 +1,48 @@
-{% extends "main_layout.njk" %}
-{% block mainbody %}
-    <div class="main_container" >
-        {% include "partials/NavBar.njk" %}
-        <form method="post" action="/upload" name="file_form" class="file_form" enctype="multipart/form-data">
-            <input type="file" name="fileSubmitted" class="file_container"/>
-            <p class="drag_text">Drag and drop files or Click here</p>
-            <input type="submit" id="submitButton" name="submitButton" onclick="uploadAlert()">
-        </form>
-    </div>
-{% endblock %}
 
+{% extends main_layout %}
+
+{% block mainbody %}
+      {{super()}}
+      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+      <div class="main_container" >
+          <form method="post" action="/upload" name="file_form" class="file_form" enctype="multipart/form-data">
+              <input type="file" name="fileSubmitted" class="file_container"/>
+              <p class="drag_text">Drag and drop files or Click here</p>
+              <input type="submit" id="submitButton" name="submitButton" onclick="uploadAlert()">
+          </form>
+      </div>
+{% endblock %}
 
 <script>
     {% block script %}
       function uploadAlert(){
         alert("File uploaded successfully!")
       }
+
+      const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+
+      toggle.addEventListener("click", () =>{
+      sidebar.classList.toggle("close");
+      });
+
+      searchBtn.addEventListener("click", () =>{
+      sidebar.classList.remove("close");
+      });
+
+      modeSwitch.addEventListener("click", () =>{
+        body.classList.toggle("dark");
+
+        if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+        }else{
+        modeText.innerText = "Dark mode";
+        }
+      });
     {% endblock script %}
 </script>
