@@ -1,4 +1,10 @@
-# ☁️ Cloudy (File Sharing System)
+<p>
+  <img alt="nunjucks" src="https://img.shields.io/badge/-Nunjucks-F7B93E?style=flat-square&logo=nunjucks&logoColor=white" />
+  <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
+  <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" />
+</p>
+
+#  ☁️ Cloudy (File Sharing System)
 ## Upload
 ![image](https://user-images.githubusercontent.com/33567830/224738818-5f3f761d-4bc9-4236-b312-23571cf0b006.png)
 ## Browse
