@@ -33,11 +33,10 @@ To upload a file, users select the file they want to upload and specify who can 
 
 ```
 
-```
-
 
 ```
-# 🔧 Dependencies
+
+## 🔧 Dependencies
 "dropzone": "^6.0.0-beta.2",
 "express": "^4.18.2",
 "express-session": "^1.17.3",
