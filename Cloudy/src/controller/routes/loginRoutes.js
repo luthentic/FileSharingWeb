@@ -34,7 +34,7 @@ router
           })
         } else {
           res.redirect("/")
-          res.send("Incorrect username or password")
+          // res.send("Incorrect username or password")  Occur error
         }
       }
     )

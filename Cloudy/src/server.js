@@ -18,17 +18,6 @@ const client = new mongodb.MongoClient(uri)
 const default_database = "cloudyFiles"
 
 const port = 3000
-
-/**
- * Connects client to the database (may be redundant)
-   @return The DB response to the ping
- */
-async function connectClient() {
-  await client.connect()
-  const result = await client.db("TestDB").command({ ping: 1 })
-  return result
-}
-
 const app = express()
 const wsInstance = expressWs(app)
 
@@ -43,8 +32,8 @@ client.connect().then(console.log)
 app.use(userSession)
 
 /*
-   Session-based function.  If a user is logged in, do nothing.
-   If there is no user logged in, redirect to login page.
+  Session-based function.  If a user is logged in, do nothing.
+  If there is no user logged in, redirect to login page.
 */
 function restrict(req, res, next) {
   if (req.session.user) {
@@ -61,6 +50,7 @@ app.use("/", user_routes(client))
 
 const upload_route = require("./controller/routes/upload")
 app.use("/upload", restrict, upload_route(client))
+app.use("/delete", restrict, upload_route(client))
 
 app.ws("/gallery", async (ws, req) => {
   //Connect to a WebSocket Server
@@ -84,7 +74,7 @@ app.ws("/gallery", async (ws, req) => {
         )
       }
       //On deletion, inform the user that a file has changed.
-      if (changeEvent.operationType === "delete") {
+      else if (changeEvent.operationType === "delete") {
         client.send(
           JSON.stringify({
             event: "removal",
