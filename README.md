@@ -29,12 +29,6 @@ To use the file sharing system, users must first register with the system by pro
 
 To upload a file, users select the file they want to upload and specify who can access the file. Users can also specify which folder the file should be stored in.
 
-## 💻 Example Usage
-
-```
-
-
-```
 
 ## 🔧 Dependencies
 "dropzone": "^6.0.0-beta.2",
