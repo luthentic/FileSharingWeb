@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+mongoose.set("strictQuery", false)
 const bkfd2Password = require("pbkdf2-password")
 const hash = bkfd2Password()
 const { MONGODB } = require("../keys/credentials")
@@ -63,23 +64,6 @@ async function seedUser() {
     if (doc) {
       console.log("DB already exists")
       return null
-    } else {
-      let alphaUser = new User({
-        username: "LEE123",
-        password: " ",
-        salt: " ",
-      })
-
-      hash({ password: "5523" }, function (err, pass, salt, hashed) {
-        if (err) throw err
-        alphaUser.password = hashed
-        alphaUser.salt = salt
-      })
-
-      await mongoose.connection.db.dropCollection("users")
-      console.log("User collection seeded")
-
-      return (result = await alphaUser.save())
     }
   })
 }

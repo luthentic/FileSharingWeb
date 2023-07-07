@@ -4,10 +4,13 @@ const nunjucks = require("nunjucks")
 const expressWs = require("express-ws")
 const session = require("express-session")
 const https = require("https")
+const cors = require("cors")
 
 const userSession = session({
   name: "session",
   secret: "secrets",
+  resave: true,
+  saveUninitialized: true,
 })
 
 // Set up MongoDB
@@ -15,10 +18,11 @@ const mongodb = require("mongodb")
 const { MONGODB } = require("./keys/credentials")
 const uri = `mongodb+srv://${MONGODB.user}:${MONGODB.password}@${MONGODB.cluster}/?retryWrites=true&w=majority`
 const client = new mongodb.MongoClient(uri)
-const default_database = "cloudyFiles"
+const default_database = "Cloudy"
 
 const port = 3000
 const app = express()
+app.use(cors())
 const wsInstance = expressWs(app)
 
 nunjucks.configure("../views", {
@@ -56,9 +60,10 @@ app.ws("/gallery", async (ws, req) => {
   //Connect to a WebSocket Server
   console.log("Web Socket Opened")
   const aWS = wsInstance.getWss("/gallery")
+  const database = req.session.user
 
   //Watch the files collection for any changes
-  const my_col = client.db(default_database).collection("fs.files")
+  const my_col = client.db(database).collection("fs.files")
   const changeStream = my_col.watch()
 
   changeStream.on("change", (changeEvent) => {
@@ -87,6 +92,7 @@ app.ws("/gallery", async (ws, req) => {
 })
 
 const root_middleware = require("./controller/routes/root_middleware")
+const { log } = require("console")
 app.use("/files", restrict, root_middleware(client, { cacheSize: 25000000 }))
 
 let certificates = {

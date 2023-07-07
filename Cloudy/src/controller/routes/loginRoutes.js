@@ -8,6 +8,8 @@ const parser = express.urlencoded({ extended: false })
 const userSession = session({
   name: "session",
   secret: "secrets",
+  resave: true,
+  saveUninitialized: true,
 })
 
 router.use((req, res, next) => {
@@ -17,7 +19,7 @@ router.use((req, res, next) => {
 
 //Login Routes
 router
-  .route("/")
+  .route("/") // login
   .get((req, res) => {
     res.render("login.njk")
   })

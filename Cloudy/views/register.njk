@@ -4,37 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Cloudy</title>
+    <script src="https://kit.fontawesome.com/064290b4dc.js" crossorigin="anonymous"></script>
 </head>
 {% endblock %}
 
 <body>
     {% block mainbody %}
-    <div class="login-page">
-            <div class="white-area">
-            
-                <h1 class="octo">Cloudy</h1>
-
-                <form method="post">
-                    <div class="fill_area">
-                        <!-- Username -->
-                        <input type="text" placeholder="Name" name="username" id="nameInp" class="form_name">
-                        <!-- Password -->
-                        <input type="password" placeholder="Password" name="password" id="passInp" class="form_password">
-                        <!-- Password show button -->
-                        <input type="checkbox" onclick="password_show()" class="password_shown_button">
-                        <p class="showpass">Show Password</p>
-                    </div>
-                        <!-- Register buttons -->
-                    <button type="submit" class="signin-btn" id="create-btn">
-                        <p class="signin_text">Register</p>
-                    </button> 
-                </form>  
-
-                <div class="container_signin">
-                    <p>Already a member?<a href="/">Sign in</a>.</p>
-                </div>
-            </div>  
+      <div class="container" id="container">
+        <div class="form-container sign-in-container">
+          <form method="post">
+            <h2>Cloudy</h2>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>Sorry Oauth↑ doesn't work yet</span>
+            <input type="text" placeholder="Name" name="username" />
+            <input type="password" placeholder="Password" name="password" />
+            <a href="#"></a>
+            <button type="submit" class="submit-bt">Sign Up</button>
+          </form>
         </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>To keep connected with us please login with your personal info</p>
+              <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Hello, Cloudyer!</h1>
+              <p>You already have an account?</p>
+              <button class="ghost" id="signUp"><a href="/">Sign In</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
     {% endblock %}
     
     {% block footer %}

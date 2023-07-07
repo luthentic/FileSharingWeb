@@ -35,7 +35,7 @@
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="/upload">
-                            <i class='bx bx-cloud-upload icon'></i>
+                            <i class='bx bx-cloud-upload icon'>Upload</i>
                         </a>
                         <span class="tooltip">User</span>
                     </li>
@@ -58,7 +58,7 @@
                     </div>
                     <span class="mode-text text">Dark mode</span>
 
-                    <div class="toggle-switch">
+                    <div class="toggle-switch" onclick="darkToogle()">
                         <span class="switch"></span>
                     </div>
                 </li>
@@ -115,7 +115,32 @@
 
 <script>
   {% block script %}
-     
+      let body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+
+      toggle.addEventListener("click", () =>{
+      sidebar.classList.toggle("close");
+      });
+
+      searchBtn.addEventListener("click", () =>{
+      sidebar.classList.remove("close");
+      });
+
+      modeSwitch.addEventListener("click", () =>{
+        body.classList.toggle("dark");
+
+        if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+        }else{
+        modeText.innerText = "Dark mode";
+        }
+      });
+    
   {% endblock script %}
 </script>
 </html>

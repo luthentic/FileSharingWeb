@@ -3,11 +3,13 @@ const express = require("express")
 const session = require("express-session")
 const mongoUtils = require("../../model/mongo_utilities")
 const router = express.Router()
-const default_database = "cloudyFiles"
+const default_database = "Cloudy"
 
 const userSession = session({
   name: "session",
   secret: "secrets",
+  resave: true,
+  saveUninitialized: true,
 })
 
 var client
@@ -30,7 +32,6 @@ router
   })
   .post(userSession, async (req, res) => {
     const database = req.session.user
-
     let response = "File submitted."
 
     let form = new multiparty.Form({ autoFields: true })
@@ -40,7 +41,7 @@ router
     })
 
     form.on("part", async (part) => {
-      if (part.byteCount > 300000000) {
+      if (part.byteCount > 300000) {
         response = "File is too large."
         part.resume()
         return
