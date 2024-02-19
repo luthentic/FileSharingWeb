@@ -1,3 +1,5 @@
+
+
 <p>
   <img alt="nunjucks" src="https://img.shields.io/badge/-Nunjucks-F7B93E?style=flat-square&logo=nunjucks&logoColor=white" />
   <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
@@ -5,6 +7,10 @@
 </p>
 
 #  ☁️ Cloudy (File Sharing System)
+The ${\color{lightblue}Cloudy}$ project is a file sharing web application that integrates ${\color{lightgreen}MongoDB}$ for data storage, ${\color{lightblack}Express.js}$ for server-side logic, and ${\color{red}Nunjucks}$ as a templating engine for dynamic HTML rendering. <br/><br/>
+Follows the MVC (Model-View-Controller) architecture to separate concerns, improving code maintainability and scalability. JavaScript and CSS are used for front-end interactivity and styling, respectively. <br/><br/>
+The application supports user registration, login, file upload, and sharing functionalities, with a custom caching mechanism to enhance data retrieval efficiency. 
+
 ## Upload
 ![image](https://user-images.githubusercontent.com/33567830/224738818-5f3f761d-4bc9-4236-b312-23571cf0b006.png)
 ## Browse
