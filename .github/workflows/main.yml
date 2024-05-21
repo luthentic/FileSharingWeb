@@ -13,5 +13,9 @@ jobs:
         steps:
             - name: Contribute List
               uses: akhilmhdh/contributors-readme-action@v2.3.10
+              with:
+                  image_size: 100
+                  readme_path: https://github.com/luthentic/FileSharingWeb/edit/main/README.md
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            
